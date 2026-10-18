@@ -1,0 +1,17 @@
+PS D:\Software\Project Files\VLM_Inference> adb shell /data/local/tmp/bw read 7            # prime core alone
+>> adb shell /data/local/tmp/bw read 4            # one A720
+>> adb shell /data/local/tmp/bw read 0            # one A520
+>> adb shell /data/local/tmp/bw read 4,5,6,7      # all A720s
+>> adb shell /data/local/tmp/bw read 0,1,2,3      # all A520s
+>> adb shell /data/local/tmp/bw read 0,1,2,3,4,5,6,7
+>> adb shell /data/local/tmp/bw read 5,6,7        # 3 threads
+>> adb shell /data/local/tmp/bw copy 4,5,6,7
+
+read cpus=7  15.37 GB/s  (0.09s)
+read cpus=4  20.67 GB/s  (0.06s)
+read cpus=0  8.48 GB/s  (0.16s)
+read cpus=4,5,6,7  20.17 GB/s  (0.27s)
+read cpus=0,1,2,3  12.29 GB/s  (0.44s)
+read cpus=0,1,2,3,4,5,6,7  19.27 GB/s  (0.56s)
+read cpus=5,6,7  19.81 GB/s  (0.20s)
+copy cpus=4,5,6,7  14.96 GB/s  (0.72s)
